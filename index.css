@@ -20,3 +20,9 @@ table td {
 table td:first-child { 
     border-left: none; 
 }
+table th { 
+    border-left: 3px solid #000; 
+}
+table th:first-child { 
+    border-left: none; 
+}
