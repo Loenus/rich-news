@@ -18,8 +18,9 @@ function refresh() {
       let newsHtml_4 = "";
       let newsHtml_5 = "";
       let newsHtml_6 = "";
-      
+      // per ogni notizia ricevuta dall'API
       articles.forEach(function (element, index) {
+        // creo la scheda della notizia
         let news = `<div class="col">
                       <div class="card h-100">
                         <img src=${element["urlToImage"]} class="card-img-top" alt="...">
@@ -33,24 +34,26 @@ function refresh() {
                         </div>
                       </div>
                     </div>`;
+        // la metto nel contenitore corrispondente alla giusta colonna
         switch (articles[0].source.name) {
-            case "Cointelegraph": newsHtml_1 += news; break;
-            case "cryptonomist.ch": newsHtml_2 += news; break; //
-            case "ANSA.it": newsHtml_3 += news; break;
-            case "Investing.com": newsHtml_4 += news; break;
-            case "Bloomberg": newsHtml_5 += news; break;
-            case "CNN": newsHtml_6 += news; break; //
-            default: console.log("Errore: Sito non in elenco");
-      });
-        
-      switch (articles[0].source.name) {
-          case "Cointelegraph": Notizie1.innerHTML = newsHtml_1; break;
-          case "cryptonomist.ch": Notizie2.innerHTML = newsHtml_2; break; //problematico
-          case "ANSA.it": Notizie3.innerHTML = newsHtml_3; break;
-          case "Investing.com": Notizie4.innerHTML = newsHtml_4; break;
-          case "Bloomberg": Notizie5.innerHTML = newsHtml_5; break;
-          case "CNN": Notizie6.innerHTML = newsHtml_6; break; //problematico ("cnn money" no, "cnn" si)
+          case "Cointelegraph": newsHtml_1 += news; break;
+          case "cryptonomist.ch": newsHtml_2 += news; break; //
+          case "ANSA.it": newsHtml_3 += news; break;
+          case "Investing.com": newsHtml_4 += news; break;
+          case "Bloomberg": newsHtml_5 += news; break;
+          case "CNN": newsHtml_6 += news; break; //
           default: console.log("Errore: Sito non in elenco");
+        }
+      });
+      // aggiorno la colonna
+      switch (articles[0].source.name) {
+        case "Cointelegraph": Notizie1.innerHTML = newsHtml_1; break;
+        case "cryptonomist.ch": Notizie2.innerHTML = newsHtml_2; break; //problematico
+        case "ANSA.it": Notizie3.innerHTML = newsHtml_3; break;
+        case "Investing.com": Notizie4.innerHTML = newsHtml_4; break;
+        case "Bloomberg": Notizie5.innerHTML = newsHtml_5; break;
+        case "CNN": Notizie6.innerHTML = newsHtml_6; break; //problematico ("cnn money" no, "cnn" si)
+        default: console.log("Errore: Sito non in elenco");
       }
     }
     else { console.log("Some error occurred") }
