@@ -1,0 +1,22 @@
+table tr th {
+    /* Site Titles */
+    padding-top: 25px;
+    text-align: center;
+    font-size: 150%;
+}
+
+table {
+    /*non sono sicuro serva*/
+    width: 100%;
+
+    /*borders between columns*/
+    border: none; 
+    border-collapse: collapse; 
+}
+/*borders between columns*/
+table td { 
+    border-left: 1px solid #000; 
+}
+table td:first-child { 
+    border-left: none; 
+}
